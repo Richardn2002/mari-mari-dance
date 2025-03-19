@@ -1,0 +1,3 @@
+[submodule "reverse-eng/gakumas/GkmasObjectManager"]
+	path = reverse-eng/gakumas/GkmasObjectManager
+	url = https://github.com/AllenHeartcore/GkmasObjectManager.git
