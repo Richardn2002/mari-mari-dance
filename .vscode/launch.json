@@ -1,0 +1,66 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Temari casl body, obj parse.",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=parse-obj",
+                    "--package=mari-formats",
+                ],
+                "filter": {
+                    "name": "parse-obj",
+                    "kind": "example"
+                }
+            },
+            "args": [
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/Geo_Body @3436631571038656755.obj"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Temari casl body, default shader.",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=default",
+                    "--package=mari-renderers"
+                ],
+                "filter": {
+                    "name": "default",
+                    "kind": "example"
+                }
+            },
+            "args": [
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/Geo_Body @3436631571038656755.obj"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Temari casl body, textured shader with camera movements.",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=textured",
+                    "--package=mari-renderers"
+                ],
+                "filter": {
+                    "name": "textured",
+                    "kind": "example"
+                }
+            },
+            "args": [
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/Geo_Body @3436631571038656755.obj",
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/t_chr_ttmr-casl-0000_bdy_col @-7574493742632659139.png"
+            ],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

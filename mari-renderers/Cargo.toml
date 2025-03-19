@@ -1,0 +1,11 @@
+[package]
+name = "mari-renderers"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+mari-formats = { path = "../mari-formats" }
+miniquad = "0.4"
+
+[dev-dependencies]
+glam = "0.30"
