@@ -8,6 +8,9 @@ pub use renderers::DefaultInitParams;
 pub use renderers::Textured;
 pub use renderers::TexturedInitParams;
 
+pub use renderers::Toon;
+pub use renderers::ToonInitParams;
+
 pub trait Renderer<'init> {
     type InitParams;
 
