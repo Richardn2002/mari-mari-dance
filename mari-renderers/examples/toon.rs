@@ -79,10 +79,11 @@ impl Stage {
             ctx,
         };
 
-        new_self.update_vp();
+        new_self.update_cam_pos();
         new_self
     }
 
+    /// call when `self.cam_dir` changed
     fn update_vp(&mut self) {
         self.vp = Mat4::perspective_rh_gl(
             60.0f32.to_radians(),
@@ -90,6 +91,15 @@ impl Stage {
             0.01,
             5.0,
         ) * Mat4::look_to_rh(self.cam_pos, self.cam_dir, Vec3::Y);
+    }
+
+    /// call when `self.cam_pos` changed
+    fn update_cam_pos(&mut self) {
+        self.update_vp();
+
+        let cam_pos_in_model_space = (self.m.inverse() * self.cam_pos.extend(1.0)).xyz();
+        self.renderer
+            .set_light_pos(&cam_pos_in_model_space.to_array());
     }
 }
 
@@ -130,10 +140,7 @@ impl EventHandler for Stage {
                 KeyCode::D => true_right,
                 _ => Vec3::ZERO,
             };
-        self.update_vp();
-        let cam_pos_in_model_space = (self.m.inverse() * self.cam_pos.extend(1.0)).xyz();
-        self.renderer
-            .set_light_pos(&cam_pos_in_model_space.to_array());
+        self.update_cam_pos();
     }
 
     fn draw(&mut self) {
