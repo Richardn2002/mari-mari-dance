@@ -61,6 +61,29 @@
                 "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/t_chr_ttmr-casl-0000_bdy_col @-7574493742632659139.png"
             ],
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Temari casl body, toon shader.",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=toon",
+                    "--package=mari-renderers"
+                ],
+                "filter": {
+                    "name": "toon",
+                    "kind": "example"
+                }
+            },
+            "args": [
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/Geo_Body @3436631571038656755.obj",
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/t_chr_ttmr-casl-0000_bdy_col @-7574493742632659139.png",
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/t_chr_ttmr-base-0000_rmp @-940541964123150780.png",
+                "reverse-eng/gakumas/assets/mdl_chr_ttmr-casl-0000_body/t_chr_ttmr-casl-0000_bdy_sdw @-2962961393340051219.png"
+            ],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
