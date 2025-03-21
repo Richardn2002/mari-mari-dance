@@ -14,10 +14,14 @@ for bundle_name in [
     'mdl_chr_ttmr-casl-0000_body',
     'mdl_chr_ttmr-base-0000_face',
     'mdl_chr_ttmr-base-0000_hair',
+    'shader',
+    'actor-shader',
+    'ui-shader',
+    'm_fdc'
 ]:
-    if not os.path.exists(bundle_name + '.unity3d'):
+    if not os.path.exists(os.path.join(ASSET_DIR, bundle_name + '.unity3d')):
         m[bundle_name].download(path=ASSET_DIR, categorize=False) # pyright: ignore
-    if not os.path.exists(bundle_name):
+    if not os.path.exists(os.path.join(ASSET_DIR, bundle_name)):
         subprocess.run([
             os.path.expanduser(ASSET_STUDIO),
             os.path.join(ASSET_DIR, bundle_name + '.unity3d'),
